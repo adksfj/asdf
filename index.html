@@ -8,28 +8,100 @@
   <meta name="robots" content="noindex, nofollow">
 
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* ===== FONDO GENERAL ===== */
     body {
-      background-color: #F5EBDD;
-      font-family: 'Georgia', serif;
-      color: #4B2E1E;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f5eddc, #efe4cf);
+      font-family: 'Playfair Display', 'Georgia', serif;
+      color: #4b2e1e; /* chocolate */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 15px;
     }
     
-    .card {
-      background-color: #EADBC8;
-      max-width: 600px;
-      margin: 60px auto;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    /* ===== CONTENEDOR TIPO CARTA ===== */
+    .carta {
+      background-color: #fbf4e6; /* vainilla clara */
+      max-width: 680px;
+      width: 100%;
+      padding: 45px 50px;
+      border-radius: 14px;
+      box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08),
+        inset 0 0 0 1px rgba(120, 80, 50, 0.15);
+      line-height: 1.85;
+      position: relative;
     }
     
-    h1, h2 {
-      color: #3A1F14;
+    /* Simula borde de papel */
+    .carta::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(120, 80, 50, 0.12);
+      border-radius: 10px;
+      pointer-events: none;
     }
     
-    p {
-      color: #4B2E1E;
-      line-height: 1.7;
+    /* ===== TÍTULO ===== */
+    .carta h1 {
+      font-size: 2.1rem;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 28px;
+      color: #3e2416;
+    }
+    
+    /* ===== TEXTO PRINCIPAL ===== */
+    .carta p {
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    
+    /* ===== POEMA ===== */
+    .poema {
+      font-style: italic;
+      margin: 30px 0;
+      padding-left: 18px;
+      border-left: 3px solid rgba(120, 80, 50, 0.3);
+    }
+    
+    /* ===== FIRMA ===== */
+    .firma {
+      margin-top: 40px;
+      text-align: right;
+      font-size: 1.05rem;
+      font-style: italic;
+    }
+    
+    /* ===== FECHA O DETALLE PEQUEÑO ===== */
+    .detalle {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: rgba(75, 46, 30, 0.75);
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .carta {
+        padding: 35px 28px;
+      }
+    
+      .carta h1 {
+        font-size: 1.7rem;
+      }
+    
+      .carta p {
+        font-size: 1.05rem;
+      }
     }
   </style>
 </head>
